@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #121321;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  transform: translate(150px, 100px);
+}
+section::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  transform: translate(-150px, -100px);
+}
+
+.container {
+  position: relative;
+  width: 375px;
+  height: 225px;
+  z-index: 100;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.container:hover {
+  transform: rotateY(180deg);
+}
+
+.container .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  background: rgb(255, 255, 255, 0.25);
+  border: 1px solid rgb(255, 255, 255, 0.1);
+  backface-visibility: hidden;
+}
+
+.container .card .logo,
+.front-face header {
+  display: flex;
+  align-items: center;
+}
+
+.front-face header {
+  justify-content: space-between;
+}
+
+.front-face header > img {
+  width: 50px;
+}
+
+.container .card .logo img {
+  width: 48px;
+  margin-right: 10px;
+}
+
+.card-info {
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h5.number {
+  margin-top: 18px;
+  letter-spacing: 1px;
+}
+
+h5.name {
+  margin-top: 20px;
+}
+
+.back-face {
+  padding: 15px 25px 25px 25px;
+  border: none;
+  transform: rotateY(180deg);
+}
+
+.back-face h6 {
+  font-size: 8px;
+}
+
+.back-face .black-se {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background-color: black;
+}
+
+.back-face .sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 80px;
+  height: 40px;
+  width: 85%;
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    #fff,
+    #fff 3px,
+    #efefef 0px,
+    #efefef 9px
+  );
+}
+
+.sign i {
+  color: black;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-right: -30px;
+  z-index: -1;
+  font-weight: 800;
+}
+
+.back-face h5 {
+  font-size: 8px;
+  margin-top: 15px;
+}
